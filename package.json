@@ -1,0 +1,29 @@
+{
+  "name": "visualmpeg-framework",
+  "version": "0.0.4",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sewritten/VisualMpeg-Framework.git"
+  },
+  "author": "Seia-Soto",
+  "license": "Artistic-2.0",
+  "bugs": {
+    "url": "https://github.com/Sewritten/VisualMpeg-Framework/issues"
+  },
+  "homepage": "https://github.com/Sewritten/VisualMpeg-Framework#readme",
+  "bin": {
+    "visualmpeg": "./index.js"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "ffmpeg-binaries": "^4.0.0",
+    "inquirer": "^6.2.1",
+    "log-update": "^2.3.0",
+    "shelljs": "^0.8.3"
+  }
+}
