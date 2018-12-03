@@ -1,8 +1,9 @@
 module.exports = {
   type: 'list',
   name: 'todo',
-  message: '\n\n< VisualMpeg >\nversion: 0.0.4\ncoverage (checked): *.mp4, *.ass\n\nAll subtitles will be converted into ass format.\n\nSelection: ',
+  message: '< VisualMpeg >\nversion: 0.0.5\ncoverage (checked): *.mp4, *.ass, *.srt (convert only), *.smi (convert only)\n\nAll subtitles will be converted into ass format.\n\nSelection: ',
   choices: [
-    'addSubtitle: Add subtitle to specific video.'
+    'addSubtitle;\n  Add subtitle to specific video.',
+    'convertSubtitle;\n  Convert subtitle into ASS Subtitle format.'
   ]
 }

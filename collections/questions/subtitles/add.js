@@ -8,14 +8,14 @@ module.exports = [
   {
     type: 'list',
     name: 'videoInput',
-    message: 'Please select which video to work with: alike video.mp4 and video.mkv...',
+    message: 'Please select a video to work with: alike video.mp4 and video.mkv...',
     choices: makeFilelist()
   },
   {
     type: 'list',
     name: 'subtitleInput',
-    message: 'Please select which subtitle to work with: alike subtitle.ass...',
-    choices: makeFilelist('.ass')
+    message: 'Please select a subtitle to work with: alike subtitle.ass...',
+    choices: makeFilelist()
   },
   {
     type: 'input',
