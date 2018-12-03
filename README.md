@@ -4,7 +4,7 @@
 
 Add subtitles into your video by using FFmpeg.
 
-![Example usage](../assets/eg-usage.gif)
+![Example usage](../master/assets/eg-usage.gif)
 
 ## Table of Contents
 
