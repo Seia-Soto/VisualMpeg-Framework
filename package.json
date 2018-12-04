@@ -1,6 +1,6 @@
 {
   "name": "visualmpeg-framework",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "ffmpeg-binaries": "^4.0.0",
     "inquirer": "^6.2.1",
     "mime-types": "^2.1.21",
     "shelljs": "^0.8.3"

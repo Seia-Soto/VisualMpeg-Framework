@@ -34,14 +34,13 @@ module.exports = (inquirer, collections, answers) => {
         '-metadata:s:s:0', `language=${answers.metaLanguage || 'eng'}`,
         '-vf', `ass=${answers.subtitleInput}`,
         '-acodec', 'copy',
-        `"${answers.outputPath || 'visualmpeg_out.' + answers.videoInput}.mp4"`
+        `"${answers.outputPath || 'visualmpeg_out.' + answers.videoInput}"`
       ], {
         shell: true
       })
 
       ffmpeg.on('close', code => {
-        console.log(chalk.white.bgGreen(`\n✔️ Done encoding! Output file is located in './${answers.outputPath || 'visualmpeg_out.' + answers.videoInput}.mp4'`))
-        process.exit(0)
+        console.log(chalk.white.bgGreen(`\n✔️ Done encoding! Output file is located in './${answers.outputPath || 'visualmpeg_out.' + answers.videoInput}'`))
       })
 
       ffmpeg.stderr.on('data', data => {
