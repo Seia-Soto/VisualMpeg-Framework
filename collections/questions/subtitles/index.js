@@ -1,2 +1,2 @@
-module.exports.add = require('./add')
+module.exports.burn = require('./burn')
 module.exports.convert = require('./convert')

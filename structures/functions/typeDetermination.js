@@ -13,12 +13,6 @@ module.exports = (files, type) => {
       (!files.subtitleInput.endsWith('.ass'))
     ]
   }
-  const callbacks = {
-    addSubtitle: () => {
-      console.log(chalk.white.bgRed('Cannot identify video and subtitles\' format.\n\n<allowedVideoFormat> video/mp4\n<allowedSubtitleFormat> *.ass'))
-      process.exit(1)
-    }
-  }
 
-  if (!tests[type]) callbacks[type]()
+  if (tests[type]) return false
 }

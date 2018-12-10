@@ -8,7 +8,7 @@ const collections = require('./collections')
 const structures = require('./structures')
 
 // NOTE: In beta
-console.log(chalk.white.bgRed('This is version of beta, unstablized version of VisualMpeg.\nStablized version is not released yet! Please be carefull.\n\n<Version> v0.0.7 (b)'))
+console.log(chalk.white.bgRed('This is version of beta, unstablized version of VisualMpeg.\nStablized version is not released yet! Please be carefull.\n\n<Version> v0.0.9'))
 
 // Checks if FFmpeg installed on this system.
 if (!shx.which('ffmpeg')) {

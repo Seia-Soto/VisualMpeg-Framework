@@ -34,6 +34,15 @@ visualmpeg
 
 ## Updates
 
+### v0.0.9
+
+- Fix checking file extension [function: convertSubtitles].
+- Add new function [function: setFramerate].
+
+### v0.0.8 (b+fx1)
+
+- Fix various bug around command handlers.
+
 ### v0.0.7
 
 - Fix invalid path input for [function: convertSubtitles].

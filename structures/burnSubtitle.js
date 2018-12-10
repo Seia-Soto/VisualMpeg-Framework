@@ -12,9 +12,12 @@ let t = false
 
 module.exports = (inquirer, collections, answers) => {
   inquirer
-    .prompt(collections.questions.subtitles.add)
+    .prompt(collections.questions.subtitles.burn)
     .then(answers => {
-      functions.typeDetermination(answers, 'addSubtitle')
+      if (functions.typeDetermination(answers, 'addSubtitle') === false) {
+        console.log(chalk.white.bgRed('Cannot identify video and subtitles\' format.\n\n<allowedVideoFormat> video/mp4\n<allowedSubtitleFormat> *.ass'))
+        process.exit(1)
+      }
 
       t = crypto.createHash('md5').update(answers.subtitleInput).digest('hex')
       fs.writeFileSync(`./visualmpeg/${t}.ass`, fs.readFileSync(`./${answers.subtitleInput}`, 'utf8'), 'utf8')
@@ -41,6 +44,7 @@ module.exports = (inquirer, collections, answers) => {
 
       ffmpeg.on('close', code => {
         console.log(chalk.white.bgGreen(`\n✔️ Done encoding! Output file is located in './${answers.outputPath || 'visualmpeg_out.' + answers.videoInput}'`))
+        process.exit(0)
       })
 
       ffmpeg.stderr.on('data', data => {

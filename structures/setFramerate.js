@@ -12,7 +12,7 @@ let t = false
 
 module.exports = (inquirer, collections, answers) => {
   inquirer
-    .prompt(collections.questions.subtitles.convert)
+    .prompt(collections.questions.encoding.svp)
     .then(answers => {
       const streamDispatcher = setInterval(() => {
         const frame = frames[i = ++i % frames.length]
@@ -23,14 +23,17 @@ module.exports = (inquirer, collections, answers) => {
 
       const ffmpeg = exec.spawn('ffmpeg', [
         '-y',
-        '-i', `"${answers.subtitleInput}"`,
-        `"${answers.outputPath || 'visualmpeg_out.' + answers.subtitleInput.replace(`.${answers.subtitleInput.split('.')[answers.subtitleInput.split('.').length - 1]}`, '')}.ass"`
+        '-i', `"${answers.videoInput}"`,
+        '-acodec', 'aac',
+        '-vcodec', 'libx264',
+        '-r', `"${answers.targetFramerate || '60.00'}"`,
+        `"${answers.outputPath || 'visualmpeg_out.' + answers.videoInput}"`
       ], {
         shell: true
       })
 
       ffmpeg.on('close', code => {
-        console.log(chalk.white.bgGreen(`\n✔️ Done encoding! Output file is located in '${answers.outputPath || 'visualmpeg_out.' + answers.subtitleInput.replace(`.${answers.subtitleInput.split('.')[answers.subtitleInput.split('.').length - 1]}`, '')}.ass`))
+        console.log(chalk.white.bgGreen(`\n✔️ Done encoding! Output file is located in '${answers.outputPath || 'visualmpeg_out.' + answers.videoInput}`))
         process.exit(0)
       })
 
