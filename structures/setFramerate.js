@@ -33,7 +33,7 @@ module.exports = (inquirer, collections, answers) => {
       })
 
       ffmpeg.on('close', code => {
-        console.log(chalk.white.bgGreen(`\n✔️ Done encoding! Output file is located in '${answers.outputPath || 'visualmpeg_out.' + answers.videoInput}`))
+        console.log(chalk.white.bgGreen(`\n✔️ Done encoding! Output file is located in '${answers.outputPath + answers.videoInput.split('.')[answers.videoInput.split('.').length - 1] || 'visualmpeg_out.' + answers.videoInput}`))
         process.exit(0)
       })
 
